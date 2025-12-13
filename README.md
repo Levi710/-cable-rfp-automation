@@ -11,60 +11,42 @@ An autonomous multi-agent system designed to discover, analyze, and bid on gover
 
 The system is built on a **Main Agent** architecture that coordinates specialized sub-agents.
 
-```latex
-\begin{tikzpicture}[
-    node distance=2cm,
-    auto,
-    agent/.style={rectangle, draw=blue!60, fill=blue!5, very thick, minimum size=10mm, rounded corners, align=center},
-    source/.style={rectangle, draw=green!60, fill=green!5, very thick, minimum size=5mm},
-    user/.style={circle, draw=black!60, fill=gray!5, very thick, minimum size=5mm},
-    line/.style={draw, thick, ->, >=stealth},
-]
+```mermaid
+graph TD
+    %% Styling Definitions
+    classDef mainAgent fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b;
+    classDef subAgent fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100;
+    classDef source fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32;
+    classDef output fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#7b1fa2;
+    classDef user fill:#eeeeee,stroke:#616161,stroke-width:2px,color:#212121;
 
-% Nodes
-\node [user] (user) {User};
-\node [agent, right of=user, node distance=4cm] (main) {Main Agent\\(Coordinator)};
-
-% Discovery Stage (Left-Below)
-\node [agent, below of=main, node distance=3cm, xshift=-3cm] (crawler) {Official Sources\\Crawler};
-\node [source, below of=crawler, node distance=2cm] (ntpc) {NTPC Portal};
-\node [source, right of=ntpc, node distance=2.5cm] (pg) {POWERGRID};
-\node [source, right of=pg, node distance=2.5cm] (seb) {State SEBs};
-
-% Processing Stage (Right)
-\node [agent, right of=main, node distance=5cm, yshift=2cm] (sales) {Sales Agent\\(Filter)};
-\node [agent, below of=sales, node distance=2.5cm] (tech) {Technical Agent\\(Specs)};
-\node [agent, below of=tech, node distance=2.5cm] (price) {Pricing Agent\\(Costing)};
-
-% Output
-\node [agent, right of=main, node distance=9cm] (output) {Final Decision\\\& Bid Pack};
-
-% Paths
-\path [line] (user) -- node {Start Pipeline} (main);
-
-% Crawler flows
-\path [line] (crawler) -- node [left] {Scrapes} (ntpc);
-\path [line] (crawler) -- node [right] {Scrapes} (pg);
-\path [line] (crawler) -- node [right] {Scrapes} (seb);
-\path [line] (ntpc) -- (crawler); % conceptual return
-\path [line] (pg) -- (crawler);
-\path [line] (seb) -- (crawler);
-\path [line] (crawler) -- node [midway, above, sloped] {Returns Tenders} (main);
-
-% Agent flows
-\path [line] (main) to [bend left=15] node [above] {1. Filter} (sales);
-\path [line] (sales) to [bend left=15] node [below] {Selection} (main);
-
-\path [line] (main) to [bend left=15] node [above] {2. Specs} (tech);
-\path [line] (tech) to [bend left=15] node [below] {Matches} (main);
-
-\path [line] (main) to [bend left=15] node [above] {3. Costing} (price);
-\path [line] (price) to [bend left=15] node [below] {Quote} (main);
-
-% Final
-\path [line] (main) -- node [above] {4. Decision} (output);
-
-\end{tikzpicture}
+    %% Nodes
+    User(["User"]) -->| "Start Pipeline" | Main{{"Main Agent (Coordinator)"}}:::mainAgent
+    
+    subgraph "Stage 1: Discovery"
+        Crawlers["Official Sources Crawler"]:::subAgent
+        NTPC["NTPC Portal"]:::source
+        PG["POWERGRID PRANIT"]:::source
+        SEB["State SEBs"]:::source
+        
+        Crawlers -->| "Scrapes" | NTPC
+        Crawlers -->| "Scrapes" | PG
+        Crawlers -->| "Scrapes" | SEB
+        Crawlers -->| "Returns Tenders" | Main
+    end
+    
+    subgraph "Stage 2: Processing"
+        Main -->| "1. Filter & Select" | Sales["Sales Agent"]:::subAgent
+        Sales -->| "Selected RFP" | Main
+        
+        Main -->| "2. Tech Specs" | Tech["Technical Agent"]:::subAgent
+        Tech -->| "Product Matches" | Main
+        
+        Main -->| "3. Costing" | Price["Pricing Agent"]:::subAgent
+        Price -->| "Final Quote" | Main
+    end
+    
+    Main -->| "4. Decision (BID/NO-BID)" | Output["Final Decision & Bid Pack"]:::output
 ```
 
 ---
