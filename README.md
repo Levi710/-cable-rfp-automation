@@ -13,46 +13,6 @@ The system is built on a **Main Agent** architecture that coordinates specialize
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/21ee5ab5-7189-492e-b353-bf8ca9c0de2d" />
 
 
-```mermaid
-graph TD
-    %% Styling Definitions
-    classDef mainAgent fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b;
-    classDef subAgent fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100;
-    classDef source fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#2e7d32;
-    classDef output fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#7b1fa2;
-    classDef user fill:#eeeeee,stroke:#616161,stroke-width:2px,color:#212121;
-
-    %% Nodes
-    User(["User"]) -- "Start Pipeline" --> Main{{"Main Agent (Coordinator)"}}:::mainAgent
-    
-    subgraph "Stage 1: Discovery"
-        Crawlers["Official Sources Crawler"]:::subAgent
-        NTPC["NTPC Portal"]:::source
-        PG["POWERGRID PRANIT"]:::source
-        SEB["State SEBs"]:::source
-        
-        Crawlers -- "Scrapes" --> NTPC
-        Crawlers -- "Scrapes" --> PG
-        Crawlers -- "Scrapes" --> SEB
-        Crawlers -- "Returns Tenders" --> Main
-    end
-    
-    subgraph "Stage 2: Processing"
-        Main -- "1. Filter & Select" --> Sales["Sales Agent"]:::subAgent
-        Sales -- "Selected RFP" --> Main
-        
-        Main -- "2. Tech Specs" --> Tech["Technical Agent"]:::subAgent
-        Tech -- "Product Matches" --> Main
-        
-        Main -- "3. Costing" --> Price["Pricing Agent"]:::subAgent
-        Price -- "Final Quote" --> Main
-    end
-    
-    Main -- "4. Decision (BID/NO-BID)" --> Output["Final Decision & Bid Pack"]:::output
-```
-
----
-
 ## Agents & Capabilities
 
 ### 1. Main Agent (The Brain)
