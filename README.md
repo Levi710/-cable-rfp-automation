@@ -10,6 +10,8 @@ An autonomous multi-agent system designed to discover, analyze, and bid on gover
 ## System Architecture
 
 The system is built on a **Main Agent** architecture that coordinates specialized sub-agents.
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/21ee5ab5-7189-492e-b353-bf8ca9c0de2d" />
+
 
 ```mermaid
 graph TD
