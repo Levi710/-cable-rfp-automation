@@ -53,9 +53,9 @@ class CrawlerStatusLogger:
         
         if success:
             self.total_tenders += tenders_found
-            logger.info(f"✅ {source_name}: {tenders_found} tenders discovered")
+            logger.info(f"[OK] {source_name}: {tenders_found} tenders discovered")
         else:
-            logger.warning(f"❌ {source_name}: {error or 'Failed'}")
+            logger.warning(f"[FAILED] {source_name}: {error or 'Failed'}")
     
     def get_summary(self) -> Dict:
         """Get summary of all sources."""
@@ -101,13 +101,13 @@ class CrawlerStatusLogger:
         print()
         
         if summary['successful']:
-            print("✅ Working Sources:")
+            print("Working Sources:")
             for source in summary['successful']:
                 data = summary['sources'][source]
                 print(f"   - {source}: {data['tenders_found']} tenders")
         
         if summary['failed']:
-            print("\n❌ Failed Sources:")
+            print("\nFailed Sources:")
             for source in summary['failed']:
                 data = summary['sources'][source]
                 print(f"   - {source}: {data['error'] or 'Unknown error'}")

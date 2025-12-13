@@ -7,7 +7,7 @@ An autonomous multi-agent system designed to discover, analyze, and bid on gover
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 The system is built on a **Main Agent** architecture that coordinates specialized sub-agents.
 
@@ -43,7 +43,7 @@ graph TD
 
 ---
 
-## 🤖 Agents & Capabilities
+## Agents & Capabilities
 
 ### 1. Main Agent (The Brain)
 - **Role:** Orchestrator & Decision Maker
@@ -77,7 +77,7 @@ graph TD
 
 ---
 
-## 🕷️ Crawler System
+## Crawler System
 
 The system includes robust crawlers for major Indian government e-procurement portals.
 
@@ -92,7 +92,7 @@ The system includes robust crawlers for major Indian government e-procurement po
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Prerequisites
 - Python 3.11+
@@ -132,7 +132,7 @@ Results are generated in the `output/` directory:
 
 ---
 
-## 📊 Decision Logic
+## Decision Logic
 
 The **BID / NO-BID** decision is based on a weighted probability algorithm:
 
@@ -147,7 +147,7 @@ The **BID / NO-BID** decision is based on a weighted probability algorithm:
 
 ---
 
-## 🔒 Security
+## Security
 - **.gitignore:** Configured to exclude all sensitive data and outputs.
 - **Environment Variables:** All secrets managed via `.env`.
 - **Crawler resilience:** Handles SSL errors and proxies securely.

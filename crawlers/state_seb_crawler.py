@@ -64,12 +64,12 @@ class StateElectricityCrawler:
                 all_tenders.extend(tenders)
                 
                 if tenders:
-                    logger.info(f"✅ {state}: Found {len(tenders)} tenders")
+                    logger.info(f"[OK] {state}: Found {len(tenders)} tenders")
                 else:
-                    logger.warning(f"⚠️ {state}: No tenders found")
+                    logger.warning(f"[WARN] {state}: No tenders found")
             
             except Exception as e:
-                logger.warning(f"⚠️ {state}: {str(e)}")
+                logger.warning(f"[WARN] {state}: {str(e)}")
         
         return all_tenders
     
