@@ -13,7 +13,7 @@ The system is built on a **Main Agent** architecture that coordinates specialize
 
 ```mermaid
 graph TD
-    User([User]) -->|Start Pipeline| Main[Main Agent (Coordinator)]
+    User([User]) -->|Start Pipeline| Main["Main Agent (Coordinator)"]
     
     subgraph "Stage 1: Discovery"
         Crawlers[Official Sources Crawler]
@@ -38,7 +38,7 @@ graph TD
         Price -->|Final Quote| Main
     end
     
-    Main -->|4. Decision (BID/NO-BID)| Output[Final Decision & Bid Pack]
+    Main -->|4. Decision (BID/NO-BID)| Output["Final Decision & Bid Pack"]
 ```
 
 ---
