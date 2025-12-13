@@ -21,7 +21,7 @@ graph TD
     classDef user fill:#eeeeee,stroke:#616161,stroke-width:2px,color:#212121;
 
     %% Nodes
-    User(["User"]) -->| "Start Pipeline" | Main{{"Main Agent (Coordinator)"}}:::mainAgent
+    User(["User"]) -- "Start Pipeline" --> Main{{"Main Agent (Coordinator)"}}:::mainAgent
     
     subgraph "Stage 1: Discovery"
         Crawlers["Official Sources Crawler"]:::subAgent
@@ -29,24 +29,24 @@ graph TD
         PG["POWERGRID PRANIT"]:::source
         SEB["State SEBs"]:::source
         
-        Crawlers -->| "Scrapes" | NTPC
-        Crawlers -->| "Scrapes" | PG
-        Crawlers -->| "Scrapes" | SEB
-        Crawlers -->| "Returns Tenders" | Main
+        Crawlers -- "Scrapes" --> NTPC
+        Crawlers -- "Scrapes" --> PG
+        Crawlers -- "Scrapes" --> SEB
+        Crawlers -- "Returns Tenders" --> Main
     end
     
     subgraph "Stage 2: Processing"
-        Main -->| "1. Filter & Select" | Sales["Sales Agent"]:::subAgent
-        Sales -->| "Selected RFP" | Main
+        Main -- "1. Filter & Select" --> Sales["Sales Agent"]:::subAgent
+        Sales -- "Selected RFP" --> Main
         
-        Main -->| "2. Tech Specs" | Tech["Technical Agent"]:::subAgent
-        Tech -->| "Product Matches" | Main
+        Main -- "2. Tech Specs" --> Tech["Technical Agent"]:::subAgent
+        Tech -- "Product Matches" --> Main
         
-        Main -->| "3. Costing" | Price["Pricing Agent"]:::subAgent
-        Price -->| "Final Quote" | Main
+        Main -- "3. Costing" --> Price["Pricing Agent"]:::subAgent
+        Price -- "Final Quote" --> Main
     end
     
-    Main -->| "4. Decision (BID/NO-BID)" | Output["Final Decision & Bid Pack"]:::output
+    Main -- "4. Decision (BID/NO-BID)" --> Output["Final Decision & Bid Pack"]:::output
 ```
 
 ---
