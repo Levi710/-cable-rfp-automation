@@ -11,34 +11,60 @@ An autonomous multi-agent system designed to discover, analyze, and bid on gover
 
 The system is built on a **Main Agent** architecture that coordinates specialized sub-agents.
 
-```mermaid
-graph TD
-    User(["User"]) -->| "Start Pipeline" | Main["Main Agent (Coordinator)"]
-    
-    subgraph "Stage 1: Discovery"
-        Crawlers["Official Sources Crawler"]
-        NTPC["NTPC Portal"]
-        PG["POWERGRID PRANIT"]
-        SEB["State SEBs"]
-        
-        Crawlers -->| "Scrapes" | NTPC
-        Crawlers -->| "Scrapes" | PG
-        Crawlers -->| "Scrapes" | SEB
-        Crawlers -->| "Returns Tenders" | Main
-    end
-    
-    subgraph "Stage 2: Processing"
-        Main -->| "1. Filter & Select" | Sales["Sales Agent"]
-        Sales -->| "Selected RFP" | Main
-        
-        Main -->| "2. Tech Specs" | Tech["Technical Agent"]
-        Tech -->| "Product Matches" | Main
-        
-        Main -->| "3. Costing" | Price["Pricing Agent"]
-        Price -->| "Final Quote" | Main
-    end
-    
-    Main -->| "4. Decision (BID/NO-BID)" | Output["Final Decision & Bid Pack"]
+```latex
+\begin{tikzpicture}[
+    node distance=2cm,
+    auto,
+    agent/.style={rectangle, draw=blue!60, fill=blue!5, very thick, minimum size=10mm, rounded corners, align=center},
+    source/.style={rectangle, draw=green!60, fill=green!5, very thick, minimum size=5mm},
+    user/.style={circle, draw=black!60, fill=gray!5, very thick, minimum size=5mm},
+    line/.style={draw, thick, ->, >=stealth},
+]
+
+% Nodes
+\node [user] (user) {User};
+\node [agent, right of=user, node distance=4cm] (main) {Main Agent\\(Coordinator)};
+
+% Discovery Stage (Left-Below)
+\node [agent, below of=main, node distance=3cm, xshift=-3cm] (crawler) {Official Sources\\Crawler};
+\node [source, below of=crawler, node distance=2cm] (ntpc) {NTPC Portal};
+\node [source, right of=ntpc, node distance=2.5cm] (pg) {POWERGRID};
+\node [source, right of=pg, node distance=2.5cm] (seb) {State SEBs};
+
+% Processing Stage (Right)
+\node [agent, right of=main, node distance=5cm, yshift=2cm] (sales) {Sales Agent\\(Filter)};
+\node [agent, below of=sales, node distance=2.5cm] (tech) {Technical Agent\\(Specs)};
+\node [agent, below of=tech, node distance=2.5cm] (price) {Pricing Agent\\(Costing)};
+
+% Output
+\node [agent, right of=main, node distance=9cm] (output) {Final Decision\\\& Bid Pack};
+
+% Paths
+\path [line] (user) -- node {Start Pipeline} (main);
+
+% Crawler flows
+\path [line] (crawler) -- node [left] {Scrapes} (ntpc);
+\path [line] (crawler) -- node [right] {Scrapes} (pg);
+\path [line] (crawler) -- node [right] {Scrapes} (seb);
+\path [line] (ntpc) -- (crawler); % conceptual return
+\path [line] (pg) -- (crawler);
+\path [line] (seb) -- (crawler);
+\path [line] (crawler) -- node [midway, above, sloped] {Returns Tenders} (main);
+
+% Agent flows
+\path [line] (main) to [bend left=15] node [above] {1. Filter} (sales);
+\path [line] (sales) to [bend left=15] node [below] {Selection} (main);
+
+\path [line] (main) to [bend left=15] node [above] {2. Specs} (tech);
+\path [line] (tech) to [bend left=15] node [below] {Matches} (main);
+
+\path [line] (main) to [bend left=15] node [above] {3. Costing} (price);
+\path [line] (price) to [bend left=15] node [below] {Quote} (main);
+
+% Final
+\path [line] (main) -- node [above] {4. Decision} (output);
+
+\end{tikzpicture}
 ```
 
 ---
