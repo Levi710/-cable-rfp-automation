@@ -13,32 +13,32 @@ The system is built on a **Main Agent** architecture that coordinates specialize
 
 ```mermaid
 graph TD
-    User([User]) -->|Start Pipeline| Main["Main Agent (Coordinator)"]
+    User(["User"]) -->| "Start Pipeline" | Main["Main Agent (Coordinator)"]
     
     subgraph "Stage 1: Discovery"
-        Crawlers[Official Sources Crawler]
-        NTPC[NTPC Portal]
-        PG[POWERGRID PRANIT]
-        SEB[State SEBs]
+        Crawlers["Official Sources Crawler"]
+        NTPC["NTPC Portal"]
+        PG["POWERGRID PRANIT"]
+        SEB["State SEBs"]
         
-        Crawlers -->|Scrapes| NTPC
-        Crawlers -->|Scrapes| PG
-        Crawlers -->|Scrapes| SEB
-        Crawlers -->|Returns Tenders| Main
+        Crawlers -->| "Scrapes" | NTPC
+        Crawlers -->| "Scrapes" | PG
+        Crawlers -->| "Scrapes" | SEB
+        Crawlers -->| "Returns Tenders" | Main
     end
     
     subgraph "Stage 2: Processing"
-        Main -->|1. Filter & Select| Sales[Sales Agent]
-        Sales -->|Selected RFP| Main
+        Main -->| "1. Filter & Select" | Sales["Sales Agent"]
+        Sales -->| "Selected RFP" | Main
         
-        Main -->|2. Tech Specs| Tech[Technical Agent]
-        Tech -->|Product Matches| Main
+        Main -->| "2. Tech Specs" | Tech["Technical Agent"]
+        Tech -->| "Product Matches" | Main
         
-        Main -->|3. Costing| Price[Pricing Agent]
-        Price -->|Final Quote| Main
+        Main -->| "3. Costing" | Price["Pricing Agent"]
+        Price -->| "Final Quote" | Main
     end
     
-    Main -->|4. Decision (BID/NO-BID)| Output["Final Decision & Bid Pack"]
+    Main -->| "4. Decision (BID/NO-BID)" | Output["Final Decision & Bid Pack"]
 ```
 
 ---
