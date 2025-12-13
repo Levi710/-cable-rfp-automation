@@ -1,0 +1,253 @@
+date: invalid argument 's' for -I
+[pilot]  starting pipeline run (DB=1, POWERGRID=0)
+NTPC: No tenders parsed
+uttar_pradesh: Status 404
+⚠️ uttar_pradesh: No tenders found
+tamil_nadu: host in skip-cache www.tangedco.gov.in
+⚠️ tamil_nadu: No tenders found
+karnataka: host in skip-cache www.bescom.org
+⚠️ karnataka: No tenders found
+delhi: Status 404
+⚠️ delhi: No tenders found
+Could not parse deadline for tender TD-DEMO-33KV-001: Invalid isoformat string: '21/11/2025'
+Could not parse deadline for tender TD-DEMO-11KV-002: Invalid isoformat string: '28/11/2025'
+================================================================================
+CABLE RFP AUTOMATION - MAIN AGENT ARCHITECTURE
+================================================================================
+
+================================================================================
+STAGE 1: TENDER DISCOVERY
+================================================================================
+
+Discovery complete: 10 tenders found
+  - TenderDetail Demo: 2 tenders
+  - State SEB - Maharashtra: 2 tenders
+  - HTML Portal: 6 tenders
+
+================================================================================
+STAGE 2: MAIN AGENT COORDINATION
+================================================================================
+
+================================================================================
+MAIN AGENT: COORDINATING RFP PROCESSING
+================================================================================
+
+--------------------------------------------------------------------------------
+STEP 1: SALES AGENT - RFP IDENTIFICATION & SELECTION
+--------------------------------------------------------------------------------
+
+Selected RFP: PGCIL/2025/CABLE/33KV/001
+  Title: Supply of 33 kV XLPE Distribution Cables - 500 KM
+  Organization: Power Grid Corporation of India Limited, Delhi
+  Estimated Value: Rs 125,000,000.0
+  Deadline: 2026-01-25T17:30:00Z
+  Days until due: None
+
+Filtering Summary:
+  Total tenders: 10
+  Filtered (next 3 months): 6
+  Qualified (cable-related): 6
+
+--------------------------------------------------------------------------------
+STEP 2: MAIN AGENT - PREPARING TECHNICAL SUMMARY
+--------------------------------------------------------------------------------
+Main Agent → Preparing contextual summary for Technical Agent...
+
+Technical Summary (contextual to Technical Agent role):
+  Tender ID: PGCIL/2025/CABLE/33KV/001
+  Scope Items: 1
+  Key Specs: {'cable_type': 'XLPE', 'voltage': '33 kv', 'length_km': 500.0, 'conductor_material': 'Copper', 'insulation_type': 'XLPE', 'armoring': 'Unarmored', 'cores': '3-core', 'standards': ['IS 7098']}
+
+--------------------------------------------------------------------------------
+STEP 3: TECHNICAL AGENT - PRODUCT MATCHING & COMPARISON
+--------------------------------------------------------------------------------
+Main Agent → Sending technical summary to Technical Agent...
+
+Scope of Supply:
+Item 1: Supply of 33 kV XLPE Distribution Cables - 500 KM - 500.0 km
+
+--- Item 1: Supply of 33 kV XLPE Distribution Cables - 500 KM ---
+
+RFP Requirements:
+  voltage: 33 kV
+  cable_type: XLPE
+  conductor_material: Copper
+  insulation_type: XLPE
+  armoring: Unarmored
+  cores: 3-core
+  standards: ['IS 7098']
+
+Top 3 OEM Recommendations:
+
+  1. 33kV XLPE 3C 150 sq.mm (SKU: OEM-XLPE-33KV-3C-150)
+     Match Score: 85.71%
+
+  2. 33kV XLPE 3C 185 sq.mm (SKU: OEM-XLPE-33KV-3C-185)
+     Match Score: 85.71%
+
+  3. 33 kV XLPE 3-Core Armored Power Cable (SKU: OEM-XLPE-33KV-3C-120)
+     Match Score: 71.43%
+
+Selected Product:
+  SKU: OEM-XLPE-33KV-3C-150
+  Name: 33kV XLPE 3C 150 sq.mm
+  Match: 85.71%
+
+--------------------------------------------------------------------------------
+STEP 4: MAIN AGENT - PREPARING PRICING SUMMARY
+--------------------------------------------------------------------------------
+Main Agent → Preparing contextual summary for Pricing Agent...
+
+Pricing Summary (contextual to Pricing Agent role):
+  Test Requirements: 3 items
+  Product Recommendations: 1 items
+  Tender Value: Rs 125,000,000
+
+--------------------------------------------------------------------------------
+STEP 5: PRICING AGENT - QUOTE GENERATION
+--------------------------------------------------------------------------------
+Main Agent → Sending pricing summary to Pricing Agent...
+
+Test Requirements (3 items):
+  1. Visual inspection and dimensional check
+  2. Mechanical tests (tensile, elongation)
+  3. Tests as per IS 7098
+
+Pricing Summary:
+  Total Material Cost: Rs 825,000,000
+  Total Services Cost: Rs 15,000
+  Grand Total (Direct): Rs 825,015,000
+  Transport: Rs 41,250,750
+  Installation Support: Rs 24,750,450
+  Contingency: Rs 12,375,225
+  Profit Margin: Rs 54,203,486
+  GST: Rs 172,367,084
+  Final Quote: Rs 1,129,961,995.0
+
+--------------------------------------------------------------------------------
+STEP 6: MAIN AGENT - CONSOLIDATING RESPONSES & FINAL DECISION
+--------------------------------------------------------------------------------
+Main Agent → Consolidating Technical and Pricing Agent responses...
+
+Consolidated Overall Response:
+  OEM Products Suggested: 1 SKUs
+    - OEM-XLPE-33KV-3C-150: Rs 1650.0/m (Match: 85.71%)
+  Tests Required: 3 items
+    1. Visual inspection and dimensional check: Rs 5,000
+    2. Mechanical tests (tensile, elongation): Rs 5,000
+    3. Tests as per IS 7098: Rs 5,000
+  Total Quote: Rs 825,015,000
+
+--------------------------------------------------------------------------------
+STEP 7: MAIN AGENT - FINAL DECISION
+--------------------------------------------------------------------------------
+
+Decision Analysis:
+  Estimated Value: Rs 125,000,000
+  Our Quote: Rs 1,129,961,995
+  Quote Competitiveness: 904.0% of estimate
+  Average Match Score: 85.7%
+  Win Probability: 50.0%
+
+  FINAL RECOMMENDATION: NO-BID
+
+================================================================================
+MAIN AGENT: PROCESSING COMPLETE - NO-BID
+================================================================================
+
+================================================================================
+SAVING RESULTS
+================================================================================
+Results saved to: output/pipeline_results_new.json
+File size: 15,709 bytes
+
+================================================================================
+PIPELINE SUMMARY
+================================================================================
+Execution Time: 23.59 seconds
+Status: COMPLETE
+
+Discovery:
+  Total Discovered: 10
+
+Processing:
+  Selected RFP: PGCIL/2025/CABLE/33KV/001
+  Recommendation: NO-BID
+  Win Probability: 50.0%
+  Quoted Value: Rs 1,129,961,995
+
+Sales Agent:
+  Filtered (3-month deadline): 6
+  Qualified (cable-related): 6
+
+Technical Agent:
+  Products selected: 1
+    - OEM-XLPE-33KV-3C-150: 85.71% match
+
+Pricing Agent:
+  Material Cost: Rs 825,000,000
+  Services Cost: Rs 15,000
+  Grand Total: Rs 825,015,000
+
+================================================================================
+/Users/soumyajitghosh/cable-rfp-automation/scripts/connectivity_sanity.py:65: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  'timestamp_utc': datetime.utcnow().isoformat(),
+{
+  "timestamp_utc": "2025-11-09T12:25:39.431335",
+  "results": [
+    {
+      "host": "www.powergridindia.com",
+      "dns_error": "[Errno 8] nodename nor servname provided, or not known",
+      "http_error": "HTTPSConnectionPool(host='www.powergridindia.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x106e406e0>: Failed to resolve 'www.powergridindia.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "host": "etender.powergrid.co.in",
+      "dns_error": "[Errno 8] nodename nor servname provided, or not known",
+      "http_error": "HTTPSConnectionPool(host='etender.powergrid.co.in', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x106d77d90>: Failed to resolve 'etender.powergrid.co.in' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "host": "www.powergrid.in",
+      "dns_resolved_ip": "103.7.129.108",
+      "http_status": 200
+    },
+    {
+      "host": "www.ntpc.co.in",
+      "dns_resolved_ip": "141.226.103.3",
+      "http_status": 200
+    },
+    {
+      "host": "ntpctender.com",
+      "dns_error": "[Errno 8] nodename nor servname provided, or not known",
+      "http_error": "HTTPSConnectionPool(host='ntpctender.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x106e542d0>: Failed to resolve 'ntpctender.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "host": "www.tangedco.gov.in",
+      "dns_error": "[Errno 8] nodename nor servname provided, or not known",
+      "http_error": "HTTPSConnectionPool(host='www.tangedco.gov.in', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x106e54690>: Failed to resolve 'www.tangedco.gov.in' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "host": "www.bescom.org",
+      "dns_resolved_ip": "103.138.196.95",
+      "http_error": "HTTPSConnectionPool(host='www.bescom.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1077)')))"
+    },
+    {
+      "host": "eprocure.gov.in",
+      "dns_resolved_ip": "164.100.78.245",
+      "http_status": 200
+    },
+    {
+      "host": "eproc.rajasthan.gov.in",
+      "dns_resolved_ip": "164.100.69.202",
+      "http_status": 200
+    },
+    {
+      "host": "etender.up.nic.in",
+      "dns_resolved_ip": "164.100.78.246",
+      "http_status": 200
+    }
+  ]
+}
+/Users/soumyajitghosh/cable-rfp-automation/analytics/collect_pilot_metrics.py:21: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow().isoformat()
+[metrics] 2025-11-09T12:25:39.487956 sales_selected=12 sources=4 avg_success=0.95 avg_new=None
+[pilot] sleeping 3600s...

@@ -1,0 +1,334 @@
+{
+  "pipeline_info": {
+    "execution_time": 0.02,
+    "timestamp": "2025-11-07T21:01:41.970543",
+    "version": "2.0.0 (Main Agent)",
+    "architecture": "Hub-and-Spoke with Main Agent Coordinator",
+    "status": "complete",
+    "forced_tender_id": "IR/2025/TRD/33KV-CABLE/014"
+  },
+  "discovery": {
+    "total_discovered": 1,
+    "sources": {
+      "GeM Demo": 1
+    },
+    "tenders": [
+      {
+        "tender_id": "IR/2025/TRD/33KV-CABLE/014",
+        "title": "Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM",
+        "source": "GeM Demo",
+        "organization": "Indian Railways, South Central Railway",
+        "estimated_value": 80000000,
+        "deadline": "2026-01-06T21:01:41.987087Z"
+      }
+    ]
+  },
+  "processing": {
+    "status": "success",
+    "recommendation": "BID",
+    "selected_rfp": {
+      "tender_id": "IR/2025/TRD/33KV-CABLE/014",
+      "title": "Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM",
+      "organization": "Indian Railways, South Central Railway",
+      "deadline": "2026-01-06T21:01:41.987087Z",
+      "estimated_value": 80000000
+    },
+    "sales_agent_output": {
+      "rfp_summary": {
+        "tender_id": "IR/2025/TRD/33KV-CABLE/014",
+        "title": "Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM",
+        "organization": "Indian Railways, South Central Railway",
+        "estimated_value": 80000000,
+        "deadline": "2026-01-06T21:01:41.987087Z",
+        "days_until_due": null,
+        "location": "Telangana",
+        "product_requirements": {
+          "cable_type": "XLPE",
+          "voltage": "33 kV",
+          "length_km": 250,
+          "conductor_material": "Copper",
+          "insulation_type": "XLPE",
+          "armoring": "Armored",
+          "cores": "3-core",
+          "standards": [
+            "IS 7098"
+          ]
+        },
+        "test_requirements": [
+          "Visual inspection and dimensional check",
+          "Mechanical tests (tensile, elongation)",
+          "Tests as per IS 7098"
+        ],
+        "cable_type": "XLPE",
+        "voltage_class": "33 kV",
+        "scope_of_supply": [
+          {
+            "item_no": 1,
+            "description": "Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM",
+            "cable_type": "XLPE",
+            "voltage": "33 kV",
+            "quantity": 250,
+            "unit": "km"
+          }
+        ]
+      },
+      "filtering_stats": {
+        "total": 1,
+        "filtered": 1,
+        "qualified": 1
+      }
+    },
+    "technical_agent_output": {
+      "scope_summary": "Item 1: Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM - 250 km",
+      "products": [
+        {
+          "item_no": 1,
+          "description": "Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM",
+          "rfp_specs": {
+            "voltage": "33 kV",
+            "cable_type": "XLPE",
+            "conductor_material": "Copper",
+            "insulation_type": "XLPE",
+            "armoring": "Armored",
+            "cores": "3-core",
+            "standards": [
+              "IS 7098"
+            ]
+          },
+          "top_3_recommendations": [
+            {
+              "rank": 1,
+              "sku": "OEM-XLPE-33KV-3C-120",
+              "name": "33kV XLPE 3-Core Armored Cable 120 sq.mm",
+              "match_score": 100.0,
+              "specs": {
+                "voltage": "33 kV",
+                "cable_type": "XLPE",
+                "conductor_material": "Copper",
+                "insulation_type": "XLPE",
+                "armoring": "Armored",
+                "cores": "3-core",
+                "conductor_size": "120 sq.mm",
+                "standards": [
+                  "IS 7098",
+                  "IEC 60502"
+                ]
+              }
+            },
+            {
+              "rank": 2,
+              "sku": "OEM-XLPE-11KV-3C-35",
+              "name": "11kV XLPE 3-Core Armored Cable 35 sq.mm",
+              "match_score": 85.71,
+              "specs": {
+                "voltage": "11 kV",
+                "cable_type": "XLPE",
+                "conductor_material": "Copper",
+                "insulation_type": "XLPE",
+                "armoring": "Armored",
+                "cores": "3-core",
+                "conductor_size": "35 sq.mm",
+                "standards": [
+                  "IS 7098",
+                  "IEC 60502"
+                ]
+              }
+            },
+            {
+              "rank": 3,
+              "sku": "OEM-XLPE-11KV-3C-50",
+              "name": "11kV XLPE 3-Core Cable 50 sq.mm",
+              "match_score": 71.43,
+              "specs": {
+                "voltage": "11 kV",
+                "cable_type": "XLPE",
+                "conductor_material": "Copper",
+                "insulation_type": "XLPE",
+                "armoring": "Unarmored",
+                "cores": "3-core",
+                "conductor_size": "50 sq.mm",
+                "standards": [
+                  "IS 7098"
+                ]
+              }
+            }
+          ],
+          "comparison_table": {
+            "rfp_requirements": {
+              "voltage": "33 kV",
+              "cable_type": "XLPE",
+              "conductor_material": "Copper",
+              "insulation_type": "XLPE",
+              "armoring": "Armored",
+              "cores": "3-core",
+              "standards": [
+                "IS 7098"
+              ]
+            },
+            "oem_products": [
+              {
+                "rank": 1,
+                "sku": "OEM-XLPE-33KV-3C-120",
+                "name": "33kV XLPE 3-Core Armored Cable 120 sq.mm",
+                "match_score": "100.0%",
+                "specs": {
+                  "voltage": "33 kV",
+                  "cable_type": "XLPE",
+                  "conductor_material": "Copper",
+                  "insulation_type": "XLPE",
+                  "armoring": "Armored",
+                  "cores": "3-core",
+                  "conductor_size": "120 sq.mm",
+                  "standards": [
+                    "IS 7098",
+                    "IEC 60502"
+                  ]
+                }
+              },
+              {
+                "rank": 2,
+                "sku": "OEM-XLPE-11KV-3C-35",
+                "name": "11kV XLPE 3-Core Armored Cable 35 sq.mm",
+                "match_score": "85.71%",
+                "specs": {
+                  "voltage": "11 kV",
+                  "cable_type": "XLPE",
+                  "conductor_material": "Copper",
+                  "insulation_type": "XLPE",
+                  "armoring": "Armored",
+                  "cores": "3-core",
+                  "conductor_size": "35 sq.mm",
+                  "standards": [
+                    "IS 7098",
+                    "IEC 60502"
+                  ]
+                }
+              },
+              {
+                "rank": 3,
+                "sku": "OEM-XLPE-11KV-3C-50",
+                "name": "11kV XLPE 3-Core Cable 50 sq.mm",
+                "match_score": "71.43%",
+                "specs": {
+                  "voltage": "11 kV",
+                  "cable_type": "XLPE",
+                  "conductor_material": "Copper",
+                  "insulation_type": "XLPE",
+                  "armoring": "Unarmored",
+                  "cores": "3-core",
+                  "conductor_size": "50 sq.mm",
+                  "standards": [
+                    "IS 7098"
+                  ]
+                }
+              }
+            ]
+          },
+          "selected_product": {
+            "sku": "OEM-XLPE-33KV-3C-120",
+            "name": "33kV XLPE 3-Core Armored Cable 120 sq.mm",
+            "match_score": 100.0
+          }
+        }
+      ],
+      "final_selection": [
+        {
+          "item_no": 1,
+          "description": "Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM",
+          "selected_sku": "OEM-XLPE-33KV-3C-120",
+          "selected_product": "33kV XLPE 3-Core Armored Cable 120 sq.mm",
+          "match_score": "100.0%",
+          "quantity": 250
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "pricing_details": {
+        "products": [
+          {
+            "item_no": 1,
+            "sku": "OEM-XLPE-33KV-3C-120",
+            "description": "Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM",
+            "quantity": 250,
+            "unit": "km",
+            "unit_price": 1450,
+            "total_cost": 362500000
+          }
+        ],
+        "tests": [
+          {
+            "test_name": "Visual inspection and dimensional check",
+            "cost": 2000
+          },
+          {
+            "test_name": "Mechanical tests (tensile, elongation)",
+            "cost": 6000
+          },
+          {
+            "test_name": "Tests as per IS 7098",
+            "cost": 5000
+          }
+        ],
+        "total_material_cost": 362500000,
+        "total_services_cost": 13000,
+        "grand_total": 362513000
+      },
+      "consolidated_table": {
+        "line_items": [
+          {
+            "item_no": 1,
+            "sku": "OEM-XLPE-33KV-3C-120",
+            "description": "Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM",
+            "material_cost": 362500000,
+            "services_cost": 13000.0,
+            "total_cost": 362513000.0
+          }
+        ],
+        "summary": {
+          "total_material": 362500000,
+          "total_services": 13000,
+          "grand_total": 362513000
+        }
+      }
+    },
+    "overall_response": {
+      "tender_id": "IR/2025/TRD/33KV-CABLE/014",
+      "tender_title": "Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM",
+      "oem_products": [
+        {
+          "item_no": 1,
+          "sku": "OEM-XLPE-33KV-3C-120",
+          "description": "Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM",
+          "quantity": 250,
+          "unit": "km",
+          "unit_price": 1450,
+          "total_material_cost": 362500000,
+          "match_score": 100.0
+        }
+      ],
+      "tests_required": [
+        {
+          "test_name": "Visual inspection and dimensional check",
+          "cost": 2000
+        },
+        {
+          "test_name": "Mechanical tests (tensile, elongation)",
+          "cost": 6000
+        },
+        {
+          "test_name": "Tests as per IS 7098",
+          "cost": 5000
+        }
+      ],
+      "total_material_cost": 362500000,
+      "total_services_cost": 13000,
+      "grand_total": 362513000
+    },
+    "decision": {
+      "recommendation": "BID",
+      "win_probability": 55.0,
+      "quoted_value": 362513000,
+      "estimated_value": 80000000
+    }
+  }
+}

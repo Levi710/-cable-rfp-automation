@@ -1,0 +1,79 @@
+================================================================================
+CABLE RFP AUTOMATION - RESULTS REPORT
+================================================================================
+
+Generated: 2025-11-07 21:01:55
+Execution Time: 0.02 seconds
+Version: 2.0.0 (Main Agent)
+
+--------------------------------------------------------------------------------
+TENDER DISCOVERY
+--------------------------------------------------------------------------------
+Total Discovered: 1
+  - GeM Demo: 1 tenders
+
+--------------------------------------------------------------------------------
+SELECTED RFP
+--------------------------------------------------------------------------------
+Tender ID:        IR/2025/TRD/33KV-CABLE/014
+Title:            Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM
+Organization:     Indian Railways, South Central Railway
+Estimated Value:  Rs 80,000,000
+Deadline:         2026-01-06T21:01:41.987087Z
+
+--------------------------------------------------------------------------------
+OEM PRODUCTS RECOMMENDED
+--------------------------------------------------------------------------------
+
+1. OEM-XLPE-33KV-3C-120
+   Unit Price:         Rs 1450/meter
+   Quantity:           250 km
+   Total Material Cost: Rs 362,500,000
+   Match Score:        100.0%
+
+--------------------------------------------------------------------------------
+TESTS REQUIRED
+--------------------------------------------------------------------------------
+1. Visual inspection and dimensional check: Rs 2,000
+2. Mechanical tests (tensile, elongation): Rs 6,000
+3. Tests as per IS 7098: Rs 5,000
+
+--------------------------------------------------------------------------------
+COST SUMMARY
+--------------------------------------------------------------------------------
+Total Material Cost:  Rs 362,500,000
+Total Services Cost:  Rs 13,000
+Grand Total:          Rs 362,513,000
+
+--------------------------------------------------------------------------------
+FINAL DECISION
+--------------------------------------------------------------------------------
+Recommendation:   BID
+Win Probability:  55.0%
+Quoted Value:     Rs 362,513,000
+
+--------------------------------------------------------------------------------
+SALES AGENT OUTPUT
+--------------------------------------------------------------------------------
+Total Tenders:              1
+Filtered (3-month deadline): 1
+Qualified (cable-related):   1
+
+--------------------------------------------------------------------------------
+TECHNICAL AGENT OUTPUT
+--------------------------------------------------------------------------------
+Scope: Item 1: Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM - 250 km
+
+Item 1: Supply of 33 kV XLPE Underground Cables for Railway Traction - 250 KM
+
+Top 3 Recommendations:
+  1. 33kV XLPE 3-Core Armored Cable 120 sq.mm (SKU: OEM-XLPE-33KV-3C-120)
+     Match Score: 100.0%
+  2. 11kV XLPE 3-Core Armored Cable 35 sq.mm (SKU: OEM-XLPE-11KV-3C-35)
+     Match Score: 85.71%
+  3. 11kV XLPE 3-Core Cable 50 sq.mm (SKU: OEM-XLPE-11KV-3C-50)
+     Match Score: 71.43%
+
+================================================================================
+END OF REPORT
+================================================================================

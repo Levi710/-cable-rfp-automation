@@ -1,0 +1,472 @@
+{
+  "pipeline_info": {
+    "execution_time": 84.46,
+    "timestamp": "2025-12-13T16:09:36.214062",
+    "version": "2.0.0 (Main Agent)",
+    "architecture": "Hub-and-Spoke with Main Agent Coordinator",
+    "status": "complete",
+    "forced_tender_id": null
+  },
+  "discovery": {
+    "total_discovered": 2,
+    "sources": {
+      "State SEB - Maharashtra": 2
+    },
+    "tenders": [
+      {
+        "tender_id": "SEB-maharashtra-89709",
+        "title": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+        "source": "State SEB - Maharashtra",
+        "organization": "Maharashtra Electricity Board",
+        "estimated_value": null,
+        "deadline": null
+      },
+      {
+        "tender_id": "SEB-maharashtra-99331",
+        "title": "Procurement of\u00a0various sizes of 11/22/33 kV HT XLPE Power Cables against e-tender no.\u00a0MMD/T-LTM-14/1125November 25, 2025, 8:59 amView this",
+        "source": "State SEB - Maharashtra",
+        "organization": "Maharashtra Electricity Board",
+        "estimated_value": null,
+        "deadline": null
+      }
+    ]
+  },
+  "processing": {
+    "status": "success",
+    "recommendation": "BID",
+    "selected_rfp": {
+      "tender_id": "SEB-maharashtra-89709",
+      "title": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+      "organization": "Maharashtra Electricity Board",
+      "deadline": "Not specified",
+      "estimated_value": 0
+    },
+    "engineering_action_required": true,
+    "sales_agent_output": {
+      "rfp_summary": {
+        "tender_id": "SEB-maharashtra-89709",
+        "title": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+        "organization": "Maharashtra Electricity Board",
+        "estimated_value": 0,
+        "deadline": "Not specified",
+        "days_until_due": null,
+        "location": "Unknown",
+        "product_requirements": {
+          "cable_type": "General",
+          "voltage": "11 kv",
+          "length_km": 0,
+          "conductor_material": "Copper",
+          "insulation_type": "XLPE",
+          "armoring": "Unarmored",
+          "cores": "3-core",
+          "standards": [
+            "IS 7098"
+          ]
+        },
+        "test_requirements": [
+          "Visual inspection and dimensional check",
+          "Mechanical tests (tensile, elongation)",
+          "Tests as per IS 7098"
+        ],
+        "cable_type": "General",
+        "voltage_class": "11 kv",
+        "scope_of_supply": [
+          {
+            "item_no": 1,
+            "description": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+            "cable_type": "General",
+            "voltage": "11 kv",
+            "quantity": 1,
+            "unit": "km"
+          }
+        ]
+      },
+      "filtering_stats": {
+        "total": 2,
+        "filtered": 2,
+        "qualified": 2
+      }
+    },
+    "technical_agent_output": {
+      "scope_summary": "Item 1: Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this - 1 km",
+      "products": [
+        {
+          "item_no": 1,
+          "description": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+          "rfp_specs": {
+            "voltage": "11 kV",
+            "cable_type": "General",
+            "conductor_material": "Copper",
+            "insulation_type": "XLPE",
+            "armoring": "Unarmored",
+            "cores": "3-core",
+            "standards": [
+              "IS 7098"
+            ]
+          },
+          "top_3_recommendations": [
+            {
+              "rank": 1,
+              "sku": "OEM-XLPE-11KV-3C-185",
+              "name": "11kV XLPE 3C 185 sq.mm",
+              "match_score": 71.43,
+              "specs": {
+                "voltage": "11 kV",
+                "cable_type": "XLPE",
+                "conductor_material": "Copper",
+                "insulation_type": "XLPE",
+                "armoring": "Armored",
+                "cores": "3-core",
+                "conductor_size": "185 sq.mm",
+                "standards": [
+                  "IS 7098",
+                  "IEC 60502"
+                ]
+              }
+            },
+            {
+              "rank": 2,
+              "sku": "OEM-XLPE-11KV-3C-300",
+              "name": "11kV XLPE 3C 300 sq.mm",
+              "match_score": 71.43,
+              "specs": {
+                "voltage": "11 kV",
+                "cable_type": "XLPE",
+                "conductor_material": "Copper",
+                "insulation_type": "XLPE",
+                "armoring": "Armored",
+                "cores": "3-core",
+                "conductor_size": "300 sq.mm",
+                "standards": [
+                  "IS 7098",
+                  "IEC 60502"
+                ]
+              }
+            },
+            {
+              "rank": 3,
+              "sku": "OEM-XLPE-11KV-3C-240",
+              "name": "11kV XLPE 3C 240 sq.mm",
+              "match_score": 71.43,
+              "specs": {
+                "voltage": "11 kV",
+                "cable_type": "XLPE",
+                "conductor_material": "Copper",
+                "insulation_type": "XLPE",
+                "armoring": "Armored",
+                "cores": "3-core",
+                "conductor_size": "240 sq.mm",
+                "standards": [
+                  "IS 7098",
+                  "IEC 60502"
+                ]
+              }
+            }
+          ],
+          "comparison_table": {
+            "rfp_requirements": {
+              "voltage": "11 kV",
+              "cable_type": "General",
+              "conductor_material": "Copper",
+              "insulation_type": "XLPE",
+              "armoring": "Unarmored",
+              "cores": "3-core",
+              "standards": [
+                "IS 7098"
+              ]
+            },
+            "oem_products": [
+              {
+                "rank": 1,
+                "sku": "OEM-XLPE-11KV-3C-185",
+                "name": "11kV XLPE 3C 185 sq.mm",
+                "match_score": "71.43%",
+                "specs": {
+                  "voltage": "11 kV",
+                  "cable_type": "XLPE",
+                  "conductor_material": "Copper",
+                  "insulation_type": "XLPE",
+                  "armoring": "Armored",
+                  "cores": "3-core",
+                  "conductor_size": "185 sq.mm",
+                  "standards": [
+                    "IS 7098",
+                    "IEC 60502"
+                  ]
+                }
+              },
+              {
+                "rank": 2,
+                "sku": "OEM-XLPE-11KV-3C-300",
+                "name": "11kV XLPE 3C 300 sq.mm",
+                "match_score": "71.43%",
+                "specs": {
+                  "voltage": "11 kV",
+                  "cable_type": "XLPE",
+                  "conductor_material": "Copper",
+                  "insulation_type": "XLPE",
+                  "armoring": "Armored",
+                  "cores": "3-core",
+                  "conductor_size": "300 sq.mm",
+                  "standards": [
+                    "IS 7098",
+                    "IEC 60502"
+                  ]
+                }
+              },
+              {
+                "rank": 3,
+                "sku": "OEM-XLPE-11KV-3C-240",
+                "name": "11kV XLPE 3C 240 sq.mm",
+                "match_score": "71.43%",
+                "specs": {
+                  "voltage": "11 kV",
+                  "cable_type": "XLPE",
+                  "conductor_material": "Copper",
+                  "insulation_type": "XLPE",
+                  "armoring": "Armored",
+                  "cores": "3-core",
+                  "conductor_size": "240 sq.mm",
+                  "standards": [
+                    "IS 7098",
+                    "IEC 60502"
+                  ]
+                }
+              }
+            ]
+          },
+          "compliance_items": [
+            {
+              "parameter": "voltage",
+              "rfp": "11 kV",
+              "offered": "11 kV",
+              "status": "Pass",
+              "evidence": ""
+            },
+            {
+              "parameter": "cable_type",
+              "rfp": "General",
+              "offered": "XLPE",
+              "status": "Gap",
+              "evidence": ""
+            },
+            {
+              "parameter": "conductor_material",
+              "rfp": "Copper",
+              "offered": "Copper",
+              "status": "Pass",
+              "evidence": ""
+            },
+            {
+              "parameter": "insulation_type",
+              "rfp": "XLPE",
+              "offered": "XLPE",
+              "status": "Pass",
+              "evidence": ""
+            },
+            {
+              "parameter": "armoring",
+              "rfp": "Unarmored",
+              "offered": "Armored",
+              "status": "Gap",
+              "evidence": ""
+            },
+            {
+              "parameter": "cores",
+              "rfp": "3-core",
+              "offered": "3-core",
+              "status": "Pass",
+              "evidence": ""
+            },
+            {
+              "parameter": "standards",
+              "rfp": [
+                "IS 7098"
+              ],
+              "offered": [
+                "IS 7098",
+                "IEC 60502"
+              ],
+              "status": "Pass",
+              "evidence": ""
+            }
+          ],
+          "selected_product": {
+            "sku": "OEM-XLPE-11KV-3C-185",
+            "name": "11kV XLPE 3C 185 sq.mm",
+            "match_score": 71.43
+          }
+        }
+      ],
+      "final_selection": [
+        {
+          "item_no": 1,
+          "description": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+          "selected_sku": "OEM-XLPE-11KV-3C-185",
+          "selected_product": "11kV XLPE 3C 185 sq.mm",
+          "match_score": "71.43%",
+          "quantity": 1
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "pricing_details": {
+        "products": [
+          {
+            "item_no": 1,
+            "sku": "OEM-XLPE-11KV-3C-185",
+            "description": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+            "quantity": 1,
+            "unit": "km",
+            "unit_price": 850,
+            "total_cost": 850000
+          }
+        ],
+        "tests": [
+          {
+            "test_name": "Visual inspection and dimensional check",
+            "cost": 2000
+          },
+          {
+            "test_name": "Mechanical tests (tensile, elongation)",
+            "cost": 6000
+          },
+          {
+            "test_name": "Tests as per IS 7098",
+            "cost": 5000
+          }
+        ],
+        "total_material_cost": 850000,
+        "total_services_cost": 13000,
+        "grand_total": 863000,
+        "breakdown": {
+          "transport_cost": 43150,
+          "installation_support": 25890,
+          "contingency": 17260,
+          "profit_margin": 94930,
+          "gst": 187961,
+          "applied_pcts": {
+            "transport_pct": 0.05,
+            "installation_support_pct": 0.03,
+            "contingency_pct": 0.02,
+            "profit_margin_pct": 0.1,
+            "gst_pct": 0.18
+          }
+        },
+        "final_quote": 1232191
+      },
+      "consolidated_table": {
+        "line_items": [
+          {
+            "item_no": 1,
+            "sku": "OEM-XLPE-11KV-3C-185",
+            "description": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+            "material_cost": 850000,
+            "services_cost": 13000.0,
+            "total_cost": 863000.0
+          }
+        ],
+        "summary": {
+          "total_material": 850000,
+          "total_services": 13000,
+          "grand_total": 863000
+        }
+      }
+    },
+    "overall_response": {
+      "tender_id": "SEB-maharashtra-89709",
+      "tender_title": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+      "oem_products": [
+        {
+          "item_no": 1,
+          "sku": "OEM-XLPE-11KV-3C-185",
+          "description": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+          "quantity": 1,
+          "unit": "km",
+          "unit_price": 850,
+          "total_material_cost": 850000,
+          "match_score": 71.43
+        }
+      ],
+      "tests_required": [
+        {
+          "test_name": "Visual inspection and dimensional check",
+          "cost": 2000
+        },
+        {
+          "test_name": "Mechanical tests (tensile, elongation)",
+          "cost": 6000
+        },
+        {
+          "test_name": "Tests as per IS 7098",
+          "cost": 5000
+        }
+      ],
+      "total_material_cost": 850000,
+      "total_services_cost": 13000,
+      "grand_total": 863000
+    },
+    "new_sku_requests": [
+      {
+        "tender_id": "SEB-maharashtra-89709",
+        "item_no": 1,
+        "rfp_description": "Procurement of\u00a011 KV and 22 KV, 630 KVA Distribution Transformers\u00a0against e-tender no.\u00a0MMD/T-HTM1-28/1225December 9, 2025, 5:44 pmView this",
+        "closest_sku": "OEM-XLPE-11KV-3C-185",
+        "closest_match_score": 71.43,
+        "rfp_specs": {
+          "voltage": "11 kV",
+          "cable_type": "General",
+          "conductor_material": "Copper",
+          "insulation_type": "XLPE",
+          "armoring": "Unarmored",
+          "cores": "3-core",
+          "standards": [
+            "IS 7098"
+          ]
+        },
+        "closest_specs": {
+          "voltage": "11 kV",
+          "cable_type": "XLPE",
+          "conductor_material": "Copper",
+          "insulation_type": "XLPE",
+          "armoring": "Armored",
+          "cores": "3-core",
+          "conductor_size": "185 sq.mm",
+          "standards": [
+            "IS 7098",
+            "IEC 60502"
+          ]
+        },
+        "gaps": [
+          {
+            "parameter": "cable_type",
+            "rfp": "General",
+            "closest": "XLPE"
+          },
+          {
+            "parameter": "armoring",
+            "rfp": "Unarmored",
+            "closest": "Armored"
+          },
+          {
+            "parameter": "standards",
+            "rfp": [
+              "IS 7098"
+            ],
+            "closest": [
+              "IS 7098",
+              "IEC 60502"
+            ]
+          }
+        ],
+        "recommendation": "Create made-to-order SKU aligned with RFP specs or request OEM deviation approval."
+      }
+    ],
+    "decision": {
+      "recommendation": "BID",
+      "win_probability": 55.0,
+      "quoted_value": 1232191,
+      "estimated_value": 0
+    }
+  }
+}
