@@ -38,7 +38,11 @@ const ProcessingView = ({ onComplete }) => {
                 return;
             }
 
-            setLogs(prev => [...prev, LOG_MESSAGES[currentIndex]]);
+            // Fix: Capture value immediately to avoid closure staleness issues
+            const nextLog = LOG_MESSAGES[currentIndex];
+            if (nextLog) {
+                setLogs(prev => [...prev, nextLog]);
+            }
             currentIndex++;
 
             // Auto scroll
@@ -71,10 +75,10 @@ const ProcessingView = ({ onComplete }) => {
                 </div>
                 <div className="mt-8 space-y-2">
                     {logs.map((log, i) => (
-                        <div key={i} className={`opacity-0 animate-fade-in-quick ${log.highlight ? 'bg-white/10' : ''}`}>
+                        <div key={i} className={`opacity-0 animate-fade-in-quick ${log?.highlight ? 'bg-white/10' : ''}`}>
                             <span className="text-gray-600">[{new Date().toLocaleTimeString()}]</span>{' '}
-                            <span className={`font-bold ${log.color || 'text-tech-cyan'}`}>{log.source}</span>:{' '}
-                            <span className="text-gray-300">{log.msg}</span>
+                            <span className={`font-bold ${log?.color || 'text-tech-cyan'}`}>{log?.source}</span>:{' '}
+                            <span className="text-gray-300">{log?.msg}</span>
                         </div>
                     ))}
                     <div ref={bottomRef} />
