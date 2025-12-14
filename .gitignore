@@ -3,6 +3,7 @@
 
 # Exception for UI folder
 !ui/
+!vercel.json
 
 # Exception for gitignore itself (so we don't lose this config)
 !.gitignore
