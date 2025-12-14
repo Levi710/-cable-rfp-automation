@@ -1,9 +1,8 @@
-__pycache__/
-*.pyc
-.env
-.venv
-venv/
-.DS_Store
-output/
-.idea/
-.vscode/
+# Ignore everything
+*
+
+# Exception for UI folder
+!ui/
+
+# Exception for gitignore itself (so we don't lose this config)
+!.gitignore
