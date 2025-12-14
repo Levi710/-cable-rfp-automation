@@ -132,25 +132,10 @@ const PipelineVisualizer = ({ data }) => {
         }
     };
 
-    useEffect(() => {
-        if (detailsOpen && detailsRef.current) {
-            anime({
-                targets: detailsRef.current,
-                height: [0, 'auto'],
-                opacity: [0, 1],
-                duration: 500,
-                easing: 'easeOutExpo'
-            });
-        } else if (!detailsOpen && detailsRef.current) {
-            anime({
-                targets: detailsRef.current,
-                height: 0,
-                opacity: 0,
-                duration: 300,
-                easing: 'easeInExpo'
-            });
-        }
-    }, [detailsOpen, activeStage]);
+    // CSS-based transition is more reliable than JS height:auto
+    const detailsClasses = detailsOpen
+        ? "max-h-[1000px] opacity-100 border-white/10"
+        : "max-h-0 opacity-0 border-transparent";
 
 
     const renderDetails = () => {
@@ -339,8 +324,8 @@ const PipelineVisualizer = ({ data }) => {
                 ))}
             </div>
 
-            {/* Details Panel - Animated Expansion */}
-            <div ref={detailsRef} className="w-full bg-white/5 border-y border-white/10 overflow-hidden h-0 opacity-0 relative z-10">
+            {/* Details Panel - CSS Transition */}
+            <div className={`w-full bg-white/5 border-y overflow-hidden transition-all duration-500 ease-in-out relative z-10 ${detailsClasses}`}>
                 <div className="p-8 max-w-5xl mx-auto">
                     {renderDetails()}
                 </div>
