@@ -1,123 +1,76 @@
-# Cable RFP Automation (Agentic AI System)
+# 🚀 Cable RFP Automation Agent Swarm
 
-An autonomous multi-agent system designed to discover, analyze, and bid on government cable tenders. The system uses a **Hub-and-Spoke Agentic Architecture** to automate the end-to-end RFP process, from discovery to final bid generation.
+![System Status](https://img.shields.io/badge/System-Operational-success)
+![AI Agents](https://img.shields.io/badge/AI_Agents-3_Active-blueviolet)
+![Pipeline](https://img.shields.io/badge/Pipeline-Automated-blue)
+![Tech Stack](https://img.shields.io/badge/Stack-FastAPI%20%7C%20React%20%7C%20OpenAI-lightgrey)
 
-![Status](https://img.shields.io/badge/Status-Production_Ready-green)
-![Python](https://img.shields.io/badge/Python-3.11+-blue)
-
----
-
-## System Architecture
-
-The system is built on a **Main Agent** architecture that coordinates specialized sub-agents.
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/21ee5ab5-7189-492e-b353-bf8ca9c0de2d" />
-
-
-## Agents & Capabilities
-
-### 1. Main Agent (The Brain)
-- **Role:** Orchestrator & Decision Maker
-- **Function:** Coordinates data flow between agents, consolidates results, and calculates **Win Probability**.
-- **Logic:**
-  - `Win Probability > 50%` → **BID**
-  - `Win Probability < 50%` → **NO-BID**
-
-### 2. Sales Agent
-- **Role:** Gatekeeper
-- **Function:** Filters tenders based on:
-  - **Deadlines:** Ensures tender is active (next 3-60 days).
-  - **Relevance:** Checks for cable-specific keywords (XLPE, Power Cable, etc.).
-- **Output:** Selects the most promising RFP for processing.
-
-### 3. Technical Agent (Enhanced)
-- **Role:** Engineer
-- **Function:** 
-  - Parses complex technical specifications from tender documents.
-  - Matches requirements against an **OEM Product Catalog**.
-  - Handles **Gap Analysis** (e.g., matching 11kV requirements to 11kV products).
-  - Generates "New SKU Requests" if no suitable product exists.
-
-### 4. Pricing Agent
-- **Role:** Commercial Lead
-- **Function:** 
-  - Calculates **Material Costs** (Cable lengths * Unit rates).
-  - Estimates **Service Costs** (Transport, Installation, Testing).
-  - Adds **Margins & Taxes** (GST, Contingency).
-  - Generates the final **Bill of Quantities (BOQ)**.
+**An intelligent, multi-agent system designed to automate the end-to-end Request for Proposal (RFP) process for enterprise cable manufacturing.**
 
 ---
 
-## Crawler System
+## 🧠 System Architecture
 
-The system includes robust crawlers for major Indian government e-procurement portals.
+This project utilizes a **Micro-Agentic Architecture** where specialized AI agents collaborate to analyze, quote, and respond to complex tender documents.
 
-| Source | Feature | URL | resilience |
-|--------|---------|-----|------------|
-| **NTPC** | eProcurement | `eprocurentpc.nic.in` | Proxy Supported |
-| **POWERGRID** | PRANIT Portal | `eprocure.powergrid.in` | Proxy Supported |
-| **State SEBs** | Maharashtra, etc. | `mahadiscom.in` | Auto-Retry |
-
-*   **Status Logging:** Tracks successful/failed scrapes in `output/crawler_status.json`.
-*   **Proxy Support:** Configurable via `.env` for accessing geo-restricted portals.
+### 🤖 The Agent Swarm
+1.  **Sales Agent (The Scout)** 🕵️‍♂️
+    *   **Role:** Discover and qualify tenders.
+    *   **Capabilities:** Scrapes global portals, extracts metadata, filters by win probability.
+2.  **Technical Agent (The Engineer)** 🛠️
+    *   **Role:** Analyze technical specs and ensure compliance.
+    *   **Capabilities:** OCR scanning, PDF parsing, vector database matching with OEM product catalog.
+3.  **Pricing Agent (The Strategist)** 💰
+    *   **Role:** Calculate costs and determine profit margins.
+    *   **Capabilities:** Dynamic raw material pricing (Copper/Aluminum), competitor analysis, overhead calculation.
 
 ---
 
-## How to Run
+## ⚡ Workflow
 
-### Prerequisites
-- Python 3.11+
-- Git
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/Luciferai04/-cable-rfp-automation.git
-cd -cable-rfp-automation
+```mermaid
+graph LR
+    A[Tender Ingestion] --> B(Sales Agent);
+    B --> C{Qualified?};
+    C -- Yes --> D(Technical Agent);
+    C -- No --> X[Discard];
+    D --> E(Pricing Agent);
+    E --> F[Generate Proposal];
+    F --> G[WhatsApp/Telegram Notification];
 ```
 
-### 2. Setup Environment
-Rename the template file and configure your settings:
-```bash
-cp .env.example .env
-```
-Edit `.env` to add your keys (optional) and Proxy settings if needed.
+## 🛠️ Technology Stack
 
-### 3. Install Dependencies
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+*   **Frontend:** React, Vite, TailwindCSS, Anime.js (Futuristic UI)
+*   **Backend:** Python 3.9+, FastAPI
+*   **AI/ML:** OpenAI GPT-4, PyTorch, PaddleOCR, Sentence-Transformers
+*   **Database:** Qdrant (Vector DB), PostgreSQL
+*   **Infrastructure:** Docker, Vercel (Frontend)
 
-### 4. Run the Pipeline
-Execute the main pipeline script:
-```bash
-python run_pipeline_new.py
-```
+## 🚀 Getting Started
 
-### Outputs
-Results are generated in the `output/` directory:
-- `pipeline_results_new.json`: Complete JSON dump of the process.
-- `crawler_status.json`: Health check of all crawlers.
-- `new_sku_requests/`: Markdown files for any custom manufacturing requests.
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/Levi710/-cable-rfp-automation.git
+    ```
 
----
+2.  **Install Backend Dependencies**
+    ```bash
+    pip install -r requirements-backend.txt
+    ```
 
-## Decision Logic
+3.  **Launch the Pipeline**
+    ```bash
+    python run_pipeline_new.py
+    ```
 
-The **BID / NO-BID** decision is based on a weighted probability algorithm:
-
-1.  **Base Score:** 50%
-2.  **Product Match:** 
-    *   Match > 70%: **+5%** (Qualifies for BID)
-    *   Match < 70%: **-5%** (Rejects as NO-BID)
-3.  **Price Competitiveness** (if estimated value known):
-    *   Quote within range: **+20%**
-4.  **Urgency:**
-    *   Urgent (<30 days): **+10%**
+4.  **Start the Dashboard**
+    ```bash
+    cd client
+    npm install
+    npm run dev
+    ```
 
 ---
 
-## Security
-- **.gitignore:** Configured to exclude all sensitive data and outputs.
-- **Environment Variables:** All secrets managed via `.env`.
-- **Crawler resilience:** Handles SSL errors and proxies securely.
+*Generated by Antigravity Agents*
