@@ -1,0 +1,46 @@
+{
+  "tenders": [
+    {
+      "tender_id": "LOCAL-001",
+      "source": "Local Database",
+      "title": "Supply of 11 kV XLPE Armored Underground Cables - 350 Meters",
+      "description": "Sealed tenders are invited for supply of 11 kV XLPE insulated cables for distribution network expansion.",
+      "organization": "Maharashtra State Electricity Distribution Company",
+      "organization_type": "psu",
+      "estimated_value": 18500000,
+      "deadline": "2026-02-15T17:30:00Z",
+      "location": "Maharashtra",
+      "cable_type": "XLPE",
+      "voltage_class": "11 kV",
+      "length_km": 0.35
+    },
+    {
+      "tender_id": "LOCAL-002",
+      "source": "Local Database",
+      "title": "33 kV Distribution Cables Supply - 500 KM",
+      "description": "Tenders for 500km of 33 kV XLPE cables needed for expansion project.",
+      "organization": "Power Grid Corporation of India Limited",
+      "organization_type": "psu",
+      "estimated_value": 125000000,
+      "deadline": "2026-01-25T17:30:00Z",
+      "location": "Delhi",
+      "cable_type": "XLPE",
+      "voltage_class": "33 kV",
+      "length_km": 500
+    },
+    {
+      "tender_id": "LOCAL-003",
+      "source": "Local Database",
+      "title": "Low Voltage (440V) Control Cables for Industrial Plant - 10 KM",
+      "description": "Supply of flexible control cables for automation systems.",
+      "organization": "NTPC Limited",
+      "organization_type": "psu",
+      "estimated_value": 5000000,
+      "deadline": "2025-12-15T17:30:00Z",
+      "location": "Jharkhand",
+      "cable_type": "PVC",
+      "voltage_class": "440V",
+      "length_km": 10
+    }
+  ]
+}

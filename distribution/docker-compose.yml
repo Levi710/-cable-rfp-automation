@@ -1,0 +1,79 @@
+services:
+  postgres:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_DB: cable_rfp
+      POSTGRES_USER: rfp_user
+      POSTGRES_PASSWORD: rfp_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - cable-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - cable-network
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    volumes:
+      - qdrant_data:/qdrant/storage
+    ports:
+      - "6333:6333"
+    networks:
+      - cable-network
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.55
+    ports:
+      - "16686:16686"  # UI
+      - "6831:6831/udp"  # Agent UDP
+    networks:
+      - cable-network
+
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://rfp_user:rfp_password@postgres:5432/cable_rfp
+      REDIS_URL: redis://redis:6379/0
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      QDRANT_URL: http://qdrant:6333
+      ENVIRONMENT: production
+      DEBUG: false
+      ENABLE_SCHEDULER: true
+      LOG_LEVEL: INFO
+      JAEGER_AGENT_HOST: jaeger
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+      - qdrant
+      - jaeger
+    networks:
+      - cable-network
+
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./deployment/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    networks:
+      - cable-network
+
+networks:
+  cable-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  qdrant_data:

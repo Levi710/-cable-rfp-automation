@@ -1,0 +1,18 @@
+{
+  "timestamp_utc": "2025-11-09T11:17:52.475814",
+  "results": [
+    {
+      "url": "https://www.powergridindia.com/tenders",
+      "host": "www.powergridindia.com",
+      "dns_error": "[Errno 8] nodename nor servname provided, or not known",
+      "http_error": "HTTPSConnectionPool(host='www.powergridindia.com', port=443): Max retries exceeded with url: /tenders (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x10abcf0e0>: Failed to resolve 'www.powergridindia.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "url": "https://etender.powergrid.co.in/nicgep/app",
+      "host": "etender.powergrid.co.in",
+      "dns_error": "[Errno 8] nodename nor servname provided, or not known",
+      "http_error": "HTTPSConnectionPool(host='etender.powergrid.co.in', port=443): Max retries exceeded with url: /nicgep/app (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x10b31a350>: Failed to resolve 'etender.powergrid.co.in' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    }
+  ],
+  "overall_reachable": false
+}

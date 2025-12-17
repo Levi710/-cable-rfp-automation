@@ -1,0 +1,55 @@
+{
+  "timestamp_utc": "2025-11-18T22:55:03.268905",
+  "results": [
+    {
+      "host": "www.powergridindia.com",
+      "dns_error": "[Errno 8] nodename nor servname provided, or not known",
+      "http_error": "HTTPSConnectionPool(host='www.powergridindia.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x1071746e0>: Failed to resolve 'www.powergridindia.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "host": "etender.powergrid.co.in",
+      "dns_error": "[Errno 8] nodename nor servname provided, or not known",
+      "http_error": "HTTPSConnectionPool(host='etender.powergrid.co.in', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x1070abd90>: Failed to resolve 'etender.powergrid.co.in' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "host": "www.powergrid.in",
+      "dns_resolved_ip": "43.227.133.101",
+      "http_status": 200
+    },
+    {
+      "host": "www.ntpc.co.in",
+      "dns_resolved_ip": "141.226.103.3",
+      "http_status": 200
+    },
+    {
+      "host": "ntpctender.com",
+      "dns_error": "[Errno 8] nodename nor servname provided, or not known",
+      "http_error": "HTTPSConnectionPool(host='ntpctender.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x1071882d0>: Failed to resolve 'ntpctender.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "host": "www.tangedco.gov.in",
+      "dns_error": "[Errno 8] nodename nor servname provided, or not known",
+      "http_error": "HTTPSConnectionPool(host='www.tangedco.gov.in', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x107188690>: Failed to resolve 'www.tangedco.gov.in' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    },
+    {
+      "host": "www.bescom.org",
+      "dns_resolved_ip": "103.138.196.95",
+      "http_error": "HTTPSConnectionPool(host='www.bescom.org', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1077)')))"
+    },
+    {
+      "host": "eprocure.gov.in",
+      "dns_resolved_ip": "164.100.78.245",
+      "http_status": 200
+    },
+    {
+      "host": "eproc.rajasthan.gov.in",
+      "dns_resolved_ip": "164.100.69.202",
+      "http_status": 200
+    },
+    {
+      "host": "etender.up.nic.in",
+      "dns_resolved_ip": "164.100.78.246",
+      "http_status": 200
+    }
+  ]
+}

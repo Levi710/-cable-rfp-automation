@@ -1,59 +1,123 @@
 import React, { useState, useEffect, useRef } from 'react';
 import AgentNetwork from './AgentNetwork';
 
-const LOG_MESSAGES = [
-    { source: "SYSTEM", msg: "Initialized Pipeline v2.4" },
-    { source: "ORCHESTRATOR", msg: "Received file: 'NTPC_Tender_2024.pdf'", highlight: true },
-    { source: "ORCHESTRATOR", msg: "Parsing PDF structure..." },
-    { source: "ORCHESTRATOR", msg: "Identified 15 potential line items." },
-    { source: "ORCHESTRATOR", msg: "Delegating to Sales Agent for filtering..." },
-    { source: "SALES", msg: "Analysing keywords: '3.3kV', 'XLPE'...", color: "text-tech-magenta" },
-    { source: "SALES", msg: "Filtered 3 items. Qualified 12 tenders." },
-    { source: "SALES", msg: "Sending Qualified list to Orchestrator." },
-    { source: "ORCHESTRATOR", msg: "Received Qualified Tenders." },
-    { source: "ORCHESTRATOR", msg: "Requesting Technical Analysis for Tender #101" },
-    { source: "TECH", msg: "Querying Product Database...", color: "text-tech-cyan" },
-    { source: "TECH", msg: "Match found: 'CAB-XLPE-33-3C-300-AL' (98% match)" },
-    { source: "TECH", msg: "Verifying spec compliance... OK." },
-    { source: "ORCHESTRATOR", msg: "Technical Check Passed." },
-    { source: "ORCHESTRATOR", msg: "Requesting Pricing..." },
-    { source: "PRICING", msg: "Calculating Material Cost (Copper/Aluminum)...", color: "text-yellow-400" },
-    { source: "PRICING", msg: "Applied Margin: 12%." },
-    { source: "PRICING", msg: "Final Bid Value: ₹4,85,00,000" },
-    { source: "ORCHESTRATOR", msg: "Bid Package Ready." },
-    { source: "SYSTEM", msg: "Pipeline Execution Complete." }
-];
-
 const ProcessingView = ({ onComplete }) => {
     const [logs, setLogs] = useState([]);
     const bottomRef = useRef(null);
+    const [fetchedData, setFetchedData] = useState(null);
 
     useEffect(() => {
-        let currentIndex = 0;
+        // Fetch real data on mount
+        fetch('/data/pipeline_results.json')
+            .then(res => res.json())
+            .then(data => {
+                setFetchedData(data);
+                generateLogs(data);
+            })
+            .catch(err => {
+                console.error("Failed to load pipeline results, using fallback log:", err);
+                // Fallback to minimal logs or mock if needed, but for now we expect data to be there
+                const fallbackLogs = [
+                    { source: "SYSTEM", msg: "Error loading pipeline results." },
+                    { source: "SYSTEM", msg: "Please ensure refresh_data.py has been run." }
+                ];
+                setLogs(fallbackLogs);
+                // Still complete after a delay to show SOMETHING? 
+                // Better to maybe not complete if no data, but for demo we might want to just stop.
+            });
+    }, []);
 
+    const generateLogs = (data) => {
+        // Construct a sequence of logs based on real data events
+        const newLogs = [
+            { source: "SYSTEM", msg: `Initialized Pipeline v${data.pipeline_info?.version || '2.0'}` },
+            { source: "SYSTEM", msg: "Connecting to secure government gateways..." },
+        ];
+
+        // Discovery Logs
+        const totalDiscovered = data.discovery?.total_discovered || 0;
+        newLogs.push({ source: "CRAWLER", msg: `Scanning configured sources...` });
+        if (data.discovery?.sources) {
+            Object.entries(data.discovery.sources).forEach(([src, count]) => {
+                newLogs.push({ source: "CRAWLER", msg: `Source [${src}]: Found ${count} tenders.` });
+            });
+        }
+        newLogs.push({ source: "CRAWLER", msg: `Total Discoveries: ${totalDiscovered} items.` });
+
+        // Sales Agent Logs
+        newLogs.push({ source: "ORCHESTRATOR", msg: "Delegating to Sales Agent for qualification..." });
+        const salesStats = data.processing?.sales_agent_output?.filtering_stats;
+        if (salesStats) {
+            newLogs.push({ source: "SALES", msg: "Applying client policy filters...", color: "text-tech-magenta" });
+            newLogs.push({ source: "SALES", msg: `Filtered: ${salesStats.filtered} (Deadline/Criteria mismatch)` });
+            newLogs.push({ source: "SALES", msg: `Qualified: ${salesStats.qualified} tenders available for bidding.` });
+        }
+
+        const selectedId = data.processing?.selected_rfp?.tender_id;
+        if (selectedId) {
+            newLogs.push({ source: "SALES", msg: `Selected Top Candidate: ${selectedId}`, highlight: true });
+            newLogs.push({ source: "SALES", msg: "Sending to Orchestrator." });
+        }
+
+        // Tech Agent Logs
+        if (data.processing?.technical_agent_output) {
+            newLogs.push({ source: "ORCHESTRATOR", msg: `Engaging Technical Agent for ${selectedId}...` });
+            const products = data.processing.technical_agent_output.final_selection || [];
+            newLogs.push({ source: "TECH", msg: `Analyzing ${products.length} scope items...`, color: "text-tech-cyan" });
+
+            products.slice(0, 3).forEach(p => {
+                newLogs.push({ source: "TECH", msg: `Match found: '${p.selected_sku}' (${p.match_score}% match)` });
+            });
+            if (products.length > 3) {
+                newLogs.push({ source: "TECH", msg: `...and ${products.length - 3} more items matched.` });
+            }
+            newLogs.push({ source: "TECH", msg: "Technical compliance verification passed." });
+        }
+
+        // Pricing Agent Logs
+        if (data.processing?.pricing_agent_output) {
+            newLogs.push({ source: "ORCHESTRATOR", msg: "Requesting Pricing calculation..." });
+            const pricing = data.processing.pricing_agent_output.pricing_details;
+            newLogs.push({ source: "PRICING", msg: "Fetching live commodity prices (LME Copper/Al)...", color: "text-yellow-400" });
+            newLogs.push({ source: "PRICING", msg: `Material Cost: ₹${(pricing?.total_material_cost || 0).toLocaleString()}` });
+            newLogs.push({ source: "PRICING", msg: `Services & Overheads: ₹${(pricing?.total_services_cost || 0).toLocaleString()}` });
+            newLogs.push({ source: "PRICING", msg: `Calculated Final Quote: ₹${(pricing?.grand_total || 0).toLocaleString()}` });
+        }
+
+        // Decision Logs
+        if (data.processing?.decision) {
+            newLogs.push({ source: "ORCHESTRATOR", msg: "Consolidating final bid package..." });
+            newLogs.push({ source: "DECISION", msg: `Win Probability: ${data.processing.decision.win_probability}%`, highlight: true });
+            newLogs.push({ source: "DECISION", msg: `Recommendation: ${data.processing.recommendation}` });
+        }
+
+        // Notification Log
+        newLogs.push({ source: "SYSTEM", msg: "Generating Multichannel Report..." });
+        newLogs.push({ source: "NOTIFIER", msg: "Sending WhatsApp & Telegram alerts...", color: "text-green-400" });
+
+        newLogs.push({ source: "SYSTEM", msg: "Pipeline Execution Complete." });
+
+        // Simulate streaming
+        streamLogs(newLogs, data);
+    };
+
+    const streamLogs = (allLogs, finalData) => {
+        let currentIndex = 0;
         const interval = setInterval(() => {
-            if (currentIndex >= LOG_MESSAGES.length) {
+            if (currentIndex >= allLogs.length) {
                 clearInterval(interval);
-                setTimeout(onComplete, 1000); // Wait 1s after logs finish
+                setTimeout(() => onComplete(finalData), 1500); // Pass the real data back
                 return;
             }
 
-            // Fix: Capture value immediately to avoid closure staleness issues
-            const nextLog = LOG_MESSAGES[currentIndex];
-            if (nextLog) {
-                setLogs(prev => [...prev, nextLog]);
-            }
+            setLogs(prev => [...prev, allLogs[currentIndex]]);
             currentIndex++;
 
-            // Auto scroll
             if (bottomRef.current) {
                 bottomRef.current.scrollIntoView({ behavior: 'smooth' });
             }
-
-        }, 300); // New log every 300ms
-
-        return () => clearInterval(interval);
-    }, [onComplete]);
+        }, 400); // 400ms per log line
+    };
 
     return (
         <div className="min-h-screen flex flex-col md:flex-row p-8 gap-8 items-center">

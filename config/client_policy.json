@@ -1,0 +1,38 @@
+{
+  "qualification": {
+    "weights": {
+      "deadline": 0.25,
+      "product_coverage": 0.40,
+      "past_experience": 0.20,
+      "estimated_value": 0.15
+    },
+    "min_score": 0.6
+  },
+  "thresholds": {
+    "min_match_percent": 80
+  },
+  "overheads": {
+    "transport_pct": 0.05,
+    "installation_support_pct": 0.03,
+    "contingency_pct": 0.02,
+    "profit_margin_pct": 0.1,
+    "gst_pct": 0.18
+  },
+  "dynamic_overheads": {
+    "large_tender_margin_cap": 0.08,
+    "large_tender_contingency_cap": 0.015,
+    "mid_tender_margin_cap": 0.09,
+    "profit_margin_min": 0.04,
+    "profit_margin_max": 0.18,
+    "contingency_min": 0.0,
+    "contingency_max": 0.03,
+    "strategic_accounts": ["powergrid", "pgcil", "ntpc", "railway", "ireps"],
+    "strategic_margin_delta": -0.01,
+    "high_ratio_sharpen_threshold": 1.2,
+    "high_ratio_margin_delta": -0.02
+  },
+  "capabilities": {
+    "voltage_classes": ["11 kV", "22 kV", "33 kV", "440V"],
+    "max_total_length_km_quarter": 1500
+  }
+}

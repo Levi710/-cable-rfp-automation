@@ -1,0 +1,75 @@
+{
+  "run_timestamp": "2025-12-13T16:09:36.287482",
+  "total_sources": 7,
+  "successful_sources": 7,
+  "failed_sources": 0,
+  "total_tenders_discovered": 112,
+  "successful": [
+    "Seed URLs",
+    "CPPP",
+    "NTPC",
+    "POWERGRID",
+    "TenderDetail",
+    "State SEBs",
+    "Local Samples"
+  ],
+  "failed": [],
+  "sources": {
+    "Seed URLs": {
+      "success": true,
+      "tenders_found": 70,
+      "urls_tried": [],
+      "error": null,
+      "latency_ms": null,
+      "timestamp": "2025-12-13T16:10:11.242299"
+    },
+    "CPPP": {
+      "success": true,
+      "tenders_found": 40,
+      "urls_tried": [],
+      "error": null,
+      "latency_ms": null,
+      "timestamp": "2025-12-13T16:10:12.548681"
+    },
+    "NTPC": {
+      "success": true,
+      "tenders_found": 0,
+      "urls_tried": [],
+      "error": null,
+      "latency_ms": null,
+      "timestamp": "2025-12-13T16:10:18.060999"
+    },
+    "POWERGRID": {
+      "success": true,
+      "tenders_found": 0,
+      "urls_tried": [],
+      "error": null,
+      "latency_ms": null,
+      "timestamp": "2025-12-13T16:10:58.723001"
+    },
+    "TenderDetail": {
+      "success": true,
+      "tenders_found": 0,
+      "urls_tried": [],
+      "error": null,
+      "latency_ms": null,
+      "timestamp": "2025-12-13T16:10:58.846713"
+    },
+    "State SEBs": {
+      "success": true,
+      "tenders_found": 2,
+      "urls_tried": [],
+      "error": null,
+      "latency_ms": null,
+      "timestamp": "2025-12-13T16:11:00.665561"
+    },
+    "Local Samples": {
+      "success": true,
+      "tenders_found": 0,
+      "urls_tried": [],
+      "error": null,
+      "latency_ms": null,
+      "timestamp": "2025-12-13T16:11:00.667071"
+    }
+  }
+}

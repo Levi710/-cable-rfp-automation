@@ -13,8 +13,8 @@ function App() {
     setView('processing');
   };
 
-  const finishProcessing = () => {
-    setData(mockData);
+  const finishProcessing = (resultData) => {
+    setData(resultData || mockData);
     setView('dashboard');
   };
 

@@ -1,0 +1,17 @@
+{
+  "pipeline_info": {
+    "execution_time": 0.02,
+    "timestamp": "2025-12-17T21:28:25.073099",
+    "version": "2.0.0 (Main Agent)",
+    "architecture": "Hub-and-Spoke with Main Agent Coordinator",
+    "status": "error",
+    "forced_tender_id": null,
+    "error": "No module named 'pydantic_settings'"
+  },
+  "discovery": {
+    "total_discovered": 0,
+    "sources": {},
+    "tenders": []
+  },
+  "processing": null
+}
