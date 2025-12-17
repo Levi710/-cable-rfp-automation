@@ -1,10 +1,10 @@
 {
   "www.powergridindia.com": {
-    "until": "2025-12-13T16:09:48.989875",
+    "until": "2025-12-17T22:18:51.239763",
     "reason": "dns"
   },
   "etender.powergrid.co.in": {
-    "until": "2025-12-13T16:09:49.105552",
+    "until": "2025-12-17T22:18:51.749956",
     "reason": "dns"
   },
   "www.powergrid.in": {
@@ -12,11 +12,11 @@
     "reason": "http"
   },
   "ntpctender.com": {
-    "until": "2025-12-13T16:09:56.574638",
+    "until": "2025-12-17T22:20:20.922600",
     "reason": "dns"
   },
   "www.tangedco.gov.in": {
-    "until": "2025-12-13T16:10:26.094885",
+    "until": "2025-12-17T22:21:09.528375",
     "reason": "dns"
   },
   "www.bescom.org": {
@@ -52,7 +52,7 @@
     "reason": "http"
   },
   "eprocure.powergrid.in": {
-    "until": "2025-12-13T16:37:34.080764",
+    "until": "2025-12-17T22:20:24.861514",
     "reason": "dns"
   }
 }

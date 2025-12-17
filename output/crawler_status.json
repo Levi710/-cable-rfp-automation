@@ -1,9 +1,9 @@
 {
-  "run_timestamp": "2025-12-13T16:09:36.287482",
+  "run_timestamp": "2025-12-17T21:48:11.136710",
   "total_sources": 7,
   "successful_sources": 7,
   "failed_sources": 0,
-  "total_tenders_discovered": 112,
+  "total_tenders_discovered": 103,
   "successful": [
     "Seed URLs",
     "CPPP",
@@ -17,11 +17,11 @@
   "sources": {
     "Seed URLs": {
       "success": true,
-      "tenders_found": 70,
+      "tenders_found": 60,
       "urls_tried": [],
       "error": null,
       "latency_ms": null,
-      "timestamp": "2025-12-13T16:10:11.242299"
+      "timestamp": "2025-12-17T21:49:51.666840"
     },
     "CPPP": {
       "success": true,
@@ -29,7 +29,7 @@
       "urls_tried": [],
       "error": null,
       "latency_ms": null,
-      "timestamp": "2025-12-13T16:10:12.548681"
+      "timestamp": "2025-12-17T21:49:54.858790"
     },
     "NTPC": {
       "success": true,
@@ -37,7 +37,7 @@
       "urls_tried": [],
       "error": null,
       "latency_ms": null,
-      "timestamp": "2025-12-13T16:10:18.060999"
+      "timestamp": "2025-12-17T21:50:24.374347"
     },
     "POWERGRID": {
       "success": true,
@@ -45,7 +45,7 @@
       "urls_tried": [],
       "error": null,
       "latency_ms": null,
-      "timestamp": "2025-12-13T16:10:58.723001"
+      "timestamp": "2025-12-17T21:50:29.578997"
     },
     "TenderDetail": {
       "success": true,
@@ -53,15 +53,15 @@
       "urls_tried": [],
       "error": null,
       "latency_ms": null,
-      "timestamp": "2025-12-13T16:10:58.846713"
+      "timestamp": "2025-12-17T21:50:30.391317"
     },
     "State SEBs": {
       "success": true,
-      "tenders_found": 2,
+      "tenders_found": 3,
       "urls_tried": [],
       "error": null,
       "latency_ms": null,
-      "timestamp": "2025-12-13T16:11:00.665561"
+      "timestamp": "2025-12-17T21:51:14.475033"
     },
     "Local Samples": {
       "success": true,
@@ -69,7 +69,7 @@
       "urls_tried": [],
       "error": null,
       "latency_ms": null,
-      "timestamp": "2025-12-13T16:11:00.667071"
+      "timestamp": "2025-12-17T21:51:14.475822"
     }
   }
 }
