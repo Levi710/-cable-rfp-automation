@@ -125,8 +125,8 @@ const ProcessingView = ({ onComplete }) => {
             {/* Left: Visualization */}
             <div className="w-full md:w-1/2 ">
                 <div className="text-center mb-4">
-                    <h2 className="text-2xl font-mono font-bold animate-pulse text-tech-cyan">PROCESSING RFP...</h2>
-                    <p className="text-xs text-gray-500 font-mono">AGENTS NEGOTIATING</p>
+                    <h2 className="text-2xl font-mono font-bold animate-pulse text-tech-cyan">ANALYZING CABLE SPECS...</h2>
+                    <p className="text-xs text-gray-500 font-mono">AGENTS MATCHING SKU & COSTS</p>
                 </div>
                 <AgentNetwork isActive={true} />
             </div>
@@ -134,8 +134,8 @@ const ProcessingView = ({ onComplete }) => {
             {/* Right: Terminal Log */}
             <div className="w-full md:w-1/2 bg-black/50 border border-white/20 rounded-lg p-4 h-[500px] overflow-y-auto font-mono text-sm shadow-inner relative">
                 <div className="absolute top-0 left-0 right-0 bg-white/5 p-2 text-xs text-gray-400 flex justify-between border-b border-white/10">
-                    <span>TERMINAL_OUTPUT</span>
-                    <span>./cable_auto.log</span>
+                    <span>CABLE_MFG_CMD</span>
+                    <span>./rfp_processor.sh</span>
                 </div>
                 <div className="mt-8 space-y-2">
                     {logs.map((log, i) => (

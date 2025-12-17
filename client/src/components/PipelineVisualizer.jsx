@@ -120,16 +120,17 @@ const PipelineVisualizer = ({ data }) => {
 
     }, [data]);
 
-    const [detailsOpen, setDetailsOpen] = useState(false);
+    const [detailsOpen, setDetailsOpen] = useState(true);
     const detailsRef = useRef(null);
 
+    // Auto-open details when stage changes (if somehow closed)
+    useEffect(() => {
+        setDetailsOpen(true);
+    }, [activeStage]);
+
     const handleStageClick = (index) => {
-        if (activeStage === index && detailsOpen) {
-            setDetailsOpen(false);
-        } else {
-            setActiveStage(index);
-            setDetailsOpen(true);
-        }
+        setActiveStage(index);
+        setDetailsOpen(true);
     };
 
     // CSS-based transition is more reliable than JS height:auto
