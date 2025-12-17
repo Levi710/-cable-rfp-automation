@@ -1,0 +1,16 @@
+# Ignore backend files to prevent Vercel from attempting a Python build
+# Vercel Serverless cannot handle heavy ML libs like torch/paddleocr (size limits)
+*.py
+requirements.txt
+requirements.minimal.txt
+requirements.local-311.txt
+agents/
+crawlers/
+database/
+docs/
+utils/
+output/
+tests/
+venv/
+.venv/
+__pycache__/
