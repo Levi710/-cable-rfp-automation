@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PipelineVisualizer from './PipelineVisualizer';
+import AnalyticsCharts from './AnalyticsCharts';
 import { Activity, Database, Server, CheckCircle, Clock, AlertCircle } from 'lucide-react';
 
 const Dashboard = ({ data }) => {
@@ -74,6 +75,9 @@ const Dashboard = ({ data }) => {
                         <div className="text-sm text-gray-400 mt-1">Aluminum Price Volatility</div>
                     </div>
                 </div>
+
+                {/* Analytics Section */}
+                <AnalyticsCharts />
 
                 {/* Main Visualizer */}
                 <div className="bg-black/20 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-2xl shadow-tech-cyan/5">
